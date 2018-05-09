@@ -5,7 +5,7 @@
 #include <time.h>
 
 struct stat stat1, stat2;
-struct tm *time1, *time2;
+struct tm time1, time2;
 
 void filestat1(void);
 void filestat2(void);
@@ -50,7 +50,7 @@ void filestat2(void)
 void filetime1(void)
 
 {
-	time1 = localtime(&stat1.st_mtime);
+	time1 = *localtime(&stat1.st_mtime);
 
 }
 
@@ -59,7 +59,7 @@ void filetime1(void)
 void filetime2(void)
 
 {
-	time2 = localtime(&stat2.st_mtime);
+	time2 = *localtime(&stat2.st_mtime);
 
 }
 
