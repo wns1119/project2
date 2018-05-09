@@ -29,11 +29,22 @@ int main(void)
 }
 
 void filestat1(void)
+
 {
+
+	if(stat("./text1", &stat1) == -1)
+		printf("file1 stat error\n");
+
 }
 
+
+
 void filestat2(void)
+
 {
+	if(stat("./text2", &stat2) == -1)
+		printf("file2 stat error\n");
+
 }
 
 void filetime1(void)
