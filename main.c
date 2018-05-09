@@ -73,9 +73,62 @@ void blockcmp(void)
 
 void datecmp(void)
 {
+	printf("date comapre\n");
+	if(time1.tm_year < time2.tm_year){
+		printf("text1 is early\n\n");
+	}
+	else if(time1.tm_year > time2.tm_year){
+		printf("text2 is early\n\n");
+	}
+	else{
+		if(time1.tm_mon < time2.tm_mon){
+			printf("text1 is early\n\n");
+		}
+		else if(time1.tm_mon > time2.tm_mon){
+			printf("text2 is early\n\n");
+		}
+		else{
+			if(time1.tm_mday < time2.tm_mday){
+				printf("text1 is early\n\n");
+			}
+			else if(time1.tm_mday > time2.tm_mday){
+				printf("text2 is early\n\n");
+			}
+			else{
+				printf("same date\n\n");
+			}
+		}
+	}
+
 }
 
 void timecmp(void)
 {
+	printf("time comapre\n");
+	if(time1.tm_hour < time2.tm_hour){
+		printf("text1 is early\n\n");
+	}
+	else if(time1.tm_hour > time2.tm_hour){
+		printf("text2 is early\n\n");
+	}
+	else{
+		if(time1.tm_min < time2.tm_min){
+			printf("text1 is early\n\n");
+		}
+		else if(time1.tm_min > time2.tm_min){
+			printf("text2 is early\n\n");
+		}
+		else{
+			if(time1.tm_sec < time2.tm_sec){
+				printf("text1 is early\n\n");
+			}
+			else if(time1.tm_sec > time2.tm_sec){
+				printf("text2 is early\n\n");
+			}
+			else{
+				printf("same time\n\n");
+			}
+		}
+	}
 }
 
