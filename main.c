@@ -32,7 +32,8 @@ void filestat1(void)
 
 {
 
-	stat("./text1", &stat1);
+	if(stat("./text1", &stat1) == -1)
+		printf("file1 stat error\n");
 
 }
 
@@ -41,8 +42,8 @@ void filestat1(void)
 void filestat2(void)
 
 {
-
-	stat("./text2", &stat2);
+	if(stat("./text2", &stat2) == -1)
+		printf("file2 stat error\n");
 
 }
 
