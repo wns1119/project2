@@ -29,23 +29,38 @@ int main(void)
 }
 
 void filestat1(void)
+
 {
-	stat("text1", &stat1);
+
+	if(stat("./text1", &stat1) == -1)
+		printf("file1 stat error\n");
+
 }
 
+
+
 void filestat2(void)
+
 {
-	stat("text2", &stat2);
+	if(stat("./text2", &stat2) == -1)
+		printf("file2 stat error\n");
+
 }
 
 void filetime1(void)
+
 {
-	time1=*localtime(&(stat1.st_mtime));
+	time1 = *localtime(&stat1.st_mtime);
+
 }
 
+
+
 void filetime2(void)
+
 {
-	time2=*localtime(&(stat2.st_mtime));
+	time2 = *localtime(&stat2.st_mtime);
+
 }
 
 void sizecmp(void)
