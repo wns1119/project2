@@ -168,4 +168,75 @@ void filetime2(void)
 ## sizecmp()
 ## blockcmp()
 ## datecmp()
+### 2018.05.09
+```
+void datecmp(void)
+{
+	printf("date comapre\n");
+	if(time1.tm_year < time2.tm_year){
+		printf("text1 is early\n\n");
+	}
+	else if(time1.tm_year > time2.tm_year){
+		printf("text2 is early\n\n");
+	}
+	else{
+		if(time1.tm_mon < time2.tm_mon){
+			printf("text1 is early\n\n");
+		}
+		else if(time1.tm_mon > time2.tm_mon){
+			printf("text2 is early\n\n");
+		}
+		else{
+			if(time1.tm_mday < time2.tm_mday){
+				printf("text1 is early\n\n");
+			}
+			else if(time1.tm_mday > time2.tm_mday){
+				printf("text2 is early\n\n");
+			}
+			else{
+				printf("same date\n\n");
+			}
+		}
+	}
+
+}
+```
+* time1과 time2의 년, 월, 일 순으로 비교하여 날짜를 비교하고 결과를 출력한다.
+* 빠른 날짜를 갖는 파일이 "xxx is early" 를 출력한다.
+* 년, 월, 일 모두 같으면 "same date"를 출력한다.
 ## timecmp()
+### 2018.05.09
+```
+void timecmp(void)
+{
+	printf("time comapre\n");
+	if(time1.tm_hour < time2.tm_hour){
+		printf("text1 is early\n\n");
+	}
+	else if(time1.tm_hour > time2.tm_hour){
+		printf("text2 is early\n\n");
+	}
+	else{
+		if(time1.tm_min < time2.tm_min){
+			printf("text1 is early\n\n");
+		}
+		else if(time1.tm_min > time2.tm_min){
+			printf("text2 is early\n\n");
+		}
+		else{
+			if(time1.tm_sec < time2.tm_sec){
+				printf("text1 is early\n\n");
+			}
+			else if(time1.tm_sec > time2.tm_sec){
+				printf("text2 is early\n\n");
+			}
+			else{
+				printf("same time\n\n");
+			}
+		}
+	}
+}
+```
+* time1과 time2의 시, 분, 초 순으로 비교하여 시간을 비교하고 결과를 출력한다.
+* 빠른 시간을 갖는 파일이 "xxx is early" 를 출력한다.
+* 시, 분, 초 모두 같으면 "same time"를 출력한다.
