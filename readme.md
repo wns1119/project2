@@ -166,7 +166,43 @@ void filetime2(void)
 ```
 * stat 구조체 변수인 stat1, stat2의 최종 수정 시간 변수인 time_t st_mtime을 localtime 함수의 인자로 넣어 tm 구조체 변수 time1, time2에 최종 수정 시간 정보를 얻어온다.
 ## sizecmp()
+### 2018.05.09
+```
+void sizecmp(void)
+{
+	printf("size compare\n");
+	if((int)(stat1.st_size) > (int)(stat2.st_size)){
+		printf("text1 is bigger\n\n");
+	}else if((int)(stat1.st_size) < (int)(stat2.st_size)){
+		printf("text2 is bigger\n\n");
+	}else{
+		printf("sizes are same\n\n");
+	}
+
+
+}
+```
+* 'text1'의 파일정보를 얻어온 stat1, 'text2'의 파일정보를 얻어온 stat2 구조체의 파일 사이즈 변수인 st_size를 비교하여 결과를 출력
+* 사이즈가 큰 파일을 "xxx is bigger"라고 출력
+* 사이즈가 같으면 "sizes are same" 출력
 ## blockcmp()
+### 2018.05.09
+```
+void blockcmp(void)
+{
+	printf("block compare\n");
+	if((int)(stat1.st_blocks) > (int)(stat2.st_blocks)){
+		printf("text1 is bigger\n\n");
+	}else if((int)(stat1.st_blocks) < (int)(stat2.st_blocks)){
+		printf("text2 is bigger\n\n");
+	}else{
+		printf("blocks are same\n\n");
+	}
+}
+```
+* 'text1'의 파일정보를 얻어온 stat1, 'text2'의 파일정보를 얻어온 stat2 구조체의 블록 수 변수인 st_blocks를 비교하여 결과를 출력
+* 블록 수가 큰 파일을 "xxx is bigger"라고 출력
+* 블록 수가 같으면 "sizes are same" 출력
 ## datecmp()
 ### 2018.05.09
 ```
