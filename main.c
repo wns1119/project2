@@ -5,7 +5,7 @@
 #include <time.h>
 
 struct stat stat1, stat2;
-struct tm time1, time2;
+struct tm *time1, *time2;
 
 void filestat1(void);
 void filestat2(void);
@@ -48,27 +48,37 @@ void filestat2(void)
 }
 
 void filetime1(void)
-
 {
-	time1 = *localtime(&stat1.st_mtime);
-
 }
 
-
-
 void filetime2(void)
-
 {
-	time2 = *localtime(&stat2.st_mtime);
-
 }
 
 void sizecmp(void)
 {
+	printf("size compare\n");
+	if((int)(stat1.st_size) > (int)(stat2.st_size)){
+		printf("text1 is bigger\n\n");
+	}else if((int)(stat1.st_size) < (int)(stat2.st_size)){
+		printf("text2 is bigger\n\n");
+	}else{
+		printf("sizes are same\n\n");
+	}
+
+
 }
 
 void blockcmp(void)
 {
+	printf("block compare\n");
+	if((int)(stat1.st_blocks) > (int)(stat2.st_blocks)){
+		printf("text1 is bigger\n\n");
+	}else if((int)(stat1.st_blocks) < (int)(stat2.st_blocks)){
+		printf("text2 is bigger\n\n");
+	}else{
+		printf("blocks are same\n\n");
+	}
 }
 
 void datecmp(void)
