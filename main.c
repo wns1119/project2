@@ -29,11 +29,21 @@ int main(void)
 }
 
 void filestat1(void)
+
 {
+
+	stat("./text1", &stat1);
+
 }
 
+
+
 void filestat2(void)
+
 {
+
+	stat("./text2", &stat2);
+
 }
 
 void filetime1(void)
